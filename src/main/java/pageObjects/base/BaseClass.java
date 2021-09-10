@@ -5,7 +5,7 @@ import pageObjects.applicationPages.HomePage;
 
 public class BaseClass {
 
-    public WebDriver driver;
+    private final WebDriver driver;
 
     public BaseClass(SharedClass sharedClass) {
         driver = sharedClass.setUp();

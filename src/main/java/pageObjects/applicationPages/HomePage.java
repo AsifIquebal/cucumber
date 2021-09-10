@@ -12,7 +12,6 @@ public class HomePage {
     private final By searchButton = By.name("submit_search");
 
     public HomePage(WebDriver driver) {
-        System.out.println("driver received by home page");
         this.driver = driver;
     }
 

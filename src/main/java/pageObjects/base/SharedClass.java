@@ -14,25 +14,28 @@ public class SharedClass {
 
     @Before("@web")
     public WebDriver setUp() {
-        WebDriverManager.chromedriver().cachePath(System.getProperty("user.dir") + "/src/test/resources/drivers").setup();
-        ChromeOptions options = new ChromeOptions();
-        //options.addArguments("--headless");
-        driver = new ChromeDriver(options);
+        if(driver==null){
+            WebDriverManager.chromedriver().cachePath(System.getProperty("user.dir") + "/src/test/resources/drivers").setup();
+            ChromeOptions options = new ChromeOptions();
+            //options.addArguments("--headless");
+            driver = new ChromeDriver(options);
+        }
         return driver;
     }
 
     @After("@web")
     public void cleanUp() {
-        //base.tearDown();
         System.out.println("Quiting Browser...");
         driver.close();
         driver.quit();
     }
 
-    /*@Before(order = 0)
-    public void testBefore(){
+    @Before(order = 0)
+    public void testBefore(Scenario scenario){
         System.out.println("Before Order is 0 here, default value for order is 10000");
-    }*/
+        System.out.println("Starting: " + scenario.getName());
+        System.out.println("ID: " + scenario.getId());
+    }
 
     /*@Before
     public void setUp(Scenario scenario) {
