@@ -1,4 +1,4 @@
-package pageObjects.base;
+package stepDef;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;

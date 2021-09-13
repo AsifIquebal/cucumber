@@ -3,11 +3,9 @@ package stepDef;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import pageObjects.applicationPages.HomePage;
-import pageObjects.applicationPages.LoginPage;
-import pageObjects.applicationPages.MyAccount;
-import pageObjects.base.BaseClass;
-import pageObjects.base.SharedClass;
+import pageObjects.HomePage;
+import pageObjects.LoginPage;
+import pageObjects.MyAccount;
 
 public class AutomationPracticeSteps extends BaseClass {
 

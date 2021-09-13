@@ -1,7 +1,7 @@
-package pageObjects.base;
+package stepDef;
 
 import org.openqa.selenium.WebDriver;
-import pageObjects.applicationPages.HomePage;
+import pageObjects.HomePage;
 
 public class BaseClass {
 

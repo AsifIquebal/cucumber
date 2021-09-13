@@ -1,4 +1,4 @@
-package pageObjects.applicationPages;
+package pageObjects;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
