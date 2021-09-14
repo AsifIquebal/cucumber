@@ -65,7 +65,7 @@ public class AutomationPracticeSteps extends BaseClass {
 
     }
 
-    @When("^user search for(.*)$")
+    @When("user search for {string}")
     public void user_search_for_(String string) {
         homePage
                 .enterSearchQuery(string)
@@ -73,10 +73,9 @@ public class AutomationPracticeSteps extends BaseClass {
 
     }
 
-    //@Then("^user get \"([^\"]*)\" product as result$")
-    @Then("^user get (\\d.*) product as result$")
-    public void user_get_product_as_result(String arg1) {
-        System.out.println("Received value: " + arg1);
+    @Then("user get {int} product as result")
+    public void user_get_product_as_result(int i) {
+        System.out.println("Received value: " + i);
         // Write code here that turns the phrase above into concrete actions
     }
 
@@ -84,6 +83,5 @@ public class AutomationPracticeSteps extends BaseClass {
     @Then("go to {string}")
     public void goTo(String arg0) {
     }
-
 
 }

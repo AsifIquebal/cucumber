@@ -15,7 +15,7 @@ Feature: Automation Practice Application
     Then user log out of the application
 
   Scenario Outline: Search for products
-    When user search for <Search_Query>
+    When user search for "<Search_Query>"
     Then user get <number_of_products> product as result
 
     Examples: product search

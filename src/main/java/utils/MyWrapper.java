@@ -7,7 +7,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 
 import java.util.concurrent.TimeUnit;
 
@@ -21,7 +20,6 @@ public class MyWrapper {
             driver.findElement(by).sendKeys(valueToType);
         } catch (NoSuchElementException ex) {
             System.out.println("Could not perform SendKeys on element identified by " + by.toString());
-            Assert.fail();
         } catch (Exception ex) {
             new WebDriverWait(driver, waitTime).until(ExpectedConditions.visibilityOfElementLocated(by));
             driver.findElement(by).clear();
@@ -36,7 +34,6 @@ public class MyWrapper {
             driver.findElement(by).click();
         } catch (NoSuchElementException ex) {
             System.out.println("Could not perform SendKeys on element identified by " + by.toString());
-            Assert.fail();
         } catch (Exception ex) {
             new WebDriverWait(driver, waitTime).until(ExpectedConditions.visibilityOfElementLocated(by));
             driver.findElement(by).click();
@@ -45,9 +42,7 @@ public class MyWrapper {
 
     public static WebElement waitUntilElementExists(WebDriver driver, final By by) {
 
-        FluentWait<WebDriver> my_wait = new FluentWait<>(driver)
-                .withTimeout(30, TimeUnit.SECONDS)
-                .pollingEvery(5, TimeUnit.MICROSECONDS)
+        FluentWait<WebDriver> my_wait = new FluentWait<>(driver).withTimeout(30, TimeUnit.SECONDS).pollingEvery(5, TimeUnit.MICROSECONDS)
                 .ignoring(NoSuchElementException.class);
 
         WebElement element = my_wait.until((driver1) -> driver.findElement(by));
